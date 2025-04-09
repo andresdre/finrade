@@ -8,7 +8,7 @@ const NavBar = () => {
             <h1 className="text-xl font-bold">FinRade</h1>
             <div className="space-x-4">
                 <Link to="/" className="hover:text-gray-400">Home</Link>
-                <Link to="/char" className="hover:text-gray-400">Charts</Link>
+                <Link to="/chart" className="hover:text-gray-400">Charts</Link>
                 <Link to="/watchlist" className="hover:text-gray-400">Watchlist</Link>
             </div>
         </nav >
