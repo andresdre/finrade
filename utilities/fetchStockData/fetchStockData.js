@@ -1,5 +1,5 @@
 // utils/fetchStockData.js
-const API_KEY = 'NVVEYKOLN2BZOSJ';
+const API_KEY = 'NVVEYKOLN2BZOSJR';
 const BASE_URL = 'https://www.alphavantage.co/query';
 
 export async function fetchIntradayStockData(symbol = 'AAPL') {

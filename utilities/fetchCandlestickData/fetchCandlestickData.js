@@ -1,5 +1,5 @@
 // utils/fetchCandlestickData.js
-const API_KEY = 'NVVEYKOLN2BZO';
+const API_KEY = 'NVVEYKOLN2BZOSJR';
 const BASE_URL = 'https://www.alphavantage.co/query';
 
 export async function fetchCandlestickData(symbol = 'AAPL') {
