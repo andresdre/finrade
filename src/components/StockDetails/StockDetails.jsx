@@ -3,8 +3,7 @@ import axios from "axios";
 
 const StockDetails = ({ symbol }) => {
   const [data, setData] = useState(null);
-  const API_KEY = "NVVEYKOLN2BZOSJR";
-
+  
   useEffect(() => {
     const fetchStockDetails = async () => {
       try {

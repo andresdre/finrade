@@ -4,7 +4,6 @@ import axios from "axios";
 const StockSearch = ({ onSelectStock }) => {
     const [query, setQuery] = useState("");
     const [results, setResults] = useState([]);
-    const API_KEY = "NVVEYKOLN2BZOSJR";
 
     const handleSearch = async () => {
         if (query.length < 1) return;
