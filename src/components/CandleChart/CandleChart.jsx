@@ -4,12 +4,13 @@ import { createChart } from 'lightweight-charts';
 
 const CandleChart = ({ candles }) => {
     const chartContainerRef = useRef();
+    const chartRef = useRef(); // to hold the chart instance
 
     useEffect(() => {
-        console.log("Chart rendering", chartContainerRef.current)
+        if (!candles || candles.length === 0 || !chartContainerRef.current) return;
 
         const chart = createChart(chartContainerRef.current, {
-            width: chartContainerRef.current.clientWidth,
+            width: chartContainerRef.current.offsetWidth || 800,
             height: 400,
             layout: {
                 backgroundColor: '#fff',
@@ -29,10 +30,21 @@ const CandleChart = ({ candles }) => {
             },
         });
 
+        chartRef.current = chart;
         const candleSeries = chart.addCandlestickSeries();
         candleSeries.setData(candles);
 
-        return () => chart.remove();
+        const resizeObserver = new ResizeObserver(() => {
+            chart.applyOptions({
+                width: chartContainerRef.current.offsetWidth,
+            });
+        });
+        resizeObserver.observe(chartContainerRef.current);
+
+        return () => {
+            resizeObserver.disconnect();
+            chart.remove();
+        };
     }, [candles]);
 
     return (
