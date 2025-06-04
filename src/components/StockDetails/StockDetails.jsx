@@ -8,7 +8,7 @@ const StockDetails = ({ symbol }) => {
     const fetchStockDetails = async () => {
       try {
         const response = await axios.get(
-          `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${API_KEY}`
+          `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=NVVEYKOLN2BZOSJR`
         );
         setData(response.data["Global Quote"]);
       } catch (error) {

@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import StockChart from '../../components/StockChart/StockChart';
 import CandleChart from '../../components/CandleChart/CandleChart';
-import { fetchIntradayStockData } from '../../../utilities/fetchStockData/fetchStockData';
-import { fetchCandlestickData } from '../../../utilities/fetchCandlestickData/fetchCandlestickData';
+import { FetchIntradayStockData } from '../../../utilities/FetchStockData/FetchStockData';
+import { FetchCandlestickData } from '../../../utilities/FetchCandlestickData/FetchCandlestickData';
 
 
 const ChartPage = () => {

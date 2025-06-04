@@ -1,10 +1,10 @@
 // CandleChart.jsx
 import React, { useEffect, useRef } from 'react';
-import { createChart } from 'lightweight-charts';
+import { CandlestickSeries, createChart } from 'lightweight-charts';
 
 const CandleChart = ({ candles }) => {
     const chartContainerRef = useRef();
-    const chartRef = useRef(); // to hold the chart instance
+    const chartRef = useRef();
 
     useEffect(() => {
         if (!candles || candles.length === 0 || !chartContainerRef.current) return;
@@ -31,7 +31,7 @@ const CandleChart = ({ candles }) => {
         });
 
         chartRef.current = chart;
-        const candleSeries = chart.addCandlestickSeries();
+        const candleSeries = chart.addSeries(CandlestickSeries);
         candleSeries.setData(candles);
 
         const resizeObserver = new ResizeObserver(() => {

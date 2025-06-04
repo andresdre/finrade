@@ -10,7 +10,7 @@ const StockSearch = ({ onSelectStock }) => {
 
         try {
             const response = await axios.get(
-                `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${query}&apikey=${API_KEY}`
+                `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${query}&apikey=NVVEYKOLN2BZOSJR`
             );
             setResults(response.data.bestMatches || []);
         } catch (error) {
